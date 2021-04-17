@@ -1,3 +1,10 @@
+# lwilletts personal fork of fff
+
+Why? Dylan is very particular about code contributions to the main repo and have
+to be done in a certain style. It's easier for me to make modifications for my
+use without worrying about getting them into the main repo. Use at your own
+risk.
+
 # fff (*Fucking Fast File-Manager*)
 
 <a href="https://asciinema.org/a/qvNlrFrGB3xKZXb6GkremjZNp" target="_blank"><img src="https://asciinema.org/a/qvNlrFrGB3xKZXb6GkremjZNp.svg" alt="img" height="210px" align="right"/></a>
