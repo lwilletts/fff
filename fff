@@ -594,7 +594,7 @@ open() {
         # Open all text-based files in '$EDITOR'.
         # Everything else goes through 'xdg-open'/'open'.
         case "$mime_type" in
-            text/*|*x-empty*|*json*)
+            text/*|*x-empty*|*x-setupscript*|*json*)
                 # If 'fff' was opened as a file picker, save the opened
                 # file in a file called 'opened_file'.
                 ((file_picker == 1)) && {
@@ -605,7 +605,13 @@ open() {
 
                 clear_screen
                 reset_terminal
-                "${VISUAL:-${EDITOR:-vi}}" "$1"
+
+                if [ $(stat -c '%U' "$1") = "root" ]; then
+                    sudo -e "$1"
+                else
+                    "${VISUAL:-${EDITOR:-vi}}" "$1"
+                fi
+
                 setup_terminal
                 redraw
             ;;
