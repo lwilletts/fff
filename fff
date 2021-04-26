@@ -519,7 +519,7 @@ trash() {
         # Pass all but the last argument to the user's
         # custom script. command is used to prevent this function
         # from conflicting with commands named "trash".
-        command "$FFF_TRASH_CMD" "${@:1:$#-1}"
+        command $FFF_TRASH_CMD "${@:1:$#-1}"
 
     else
         cd "$FFF_TRASH" || cmd_line "error: Can't cd to trash directory."
